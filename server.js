@@ -10,6 +10,10 @@ const app = express();
 app.use(cors());
 const upload = multer({ dest: 'uploads/' });
 
+app.get('/', (req, res) => {
+	res.send('Images 2 webp.');
+});
+
 app.post('/upload', upload.array('images'), async (req, res) => {
 	const uploadPath = 'uploads/';
 
